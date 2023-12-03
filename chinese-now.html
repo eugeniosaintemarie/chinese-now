@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" http-equiv="Content-Type"
+        content="text/html; charset=UTF-8, width=device-width, initial-scale=1.0" />
+    <title>Chinese now</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 1.50em;
+        }
+
+        h2,
+        h3 {
+            font-size: 1.25em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        .pinyinHourContainer {
+            margin-top: 0;
+            margin-left: 93px;
+        }
+
+        .pinyinDayContainer {
+            margin-top: 0;
+            margin-left: 80px;
+        }
+
+        .pinyinMonthContainer {
+            margin-top: 0;
+            margin-left: 55px;
+        }
+
+        .pinyinYearContainer {
+            margin-top: 0;
+            margin-left: 55px;
+        }
+
+        .pinyinSeasonContainer {
+            margin-top: 0;
+            margin-left: 46px;
+        }
+
+        .pinyin {
+            color: #9E9E9E;
+            font-size: 0.66em;
+        }
+
+        .red {
+            color: #F44336;
+        }
+
+        .grey1 {
+            color: #607D8B;
+        }
+
+        .grey2 {
+            color: #90A4AE;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="time"></h1>
+    <h2 id="day"></h2>
+    <h3 id="month"></h3>
+    <h3 id="year"></h3>
+    <h4 id="season"></h4>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const date = new Date();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+            const day = date.getDay();
+            const months = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+            const dayInChinese = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            const monthInChinese = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"];
+
+            const season = getSeason(months);
+
+            const chineseTime = `<span class="red">现在是:</span> 
+                                ${convertToChineseNumber(hours)}<span class="grey1">时</span>
+                                ${convertToChineseNumber(minutes)}<span class="grey1">分</span>
+                                ${convertToChineseNumber(seconds)}<span class="grey1">秒</span>
+                                <div class="pinyinHourContainer">
+                                    <span class="pinyin">${getPronunciationHourMonth(hours)} <span class="grey2">shí</span> </span>
+                                    <span class="pinyin">${getPronunciationHourMonth(minutes)} <span class="grey2">fēn</span> </span>
+                                    <span class="pinyin">${getPronunciationHourMonth(seconds)} <span class="grey2">miǎo</span> </span>
+                                </div>`;
+
+            document.getElementById("time").innerHTML = chineseTime;
+            document.getElementById("day").innerHTML = `<span class="red">今天是:</span> ${dayInChinese[day]}
+                                <div class="pinyinDayContainer">
+                                    <span class="pinyin">${getPronunciationDay(day)}</span>
+                                </div>`;
+            document.getElementById("month").innerHTML = `<span class="red">月份:</span> ${convertToChineseNumber(months)} 月
+                                <div class="pinyinMonthContainer">
+                                    <span class="pinyin">${getPronunciationHourMonth(months)} <span class="grey2">yuè</span></span>
+                                </div>`;
+            document.getElementById("year").innerHTML = `<span class="red">年份:</span> ${convertToChineseNumber(year)}
+                                <div class="pinyinYearContainer">
+                                    <span class="pinyin">${getPronunciationHourMonth(year)}</span>
+                                </div>`;
+            document.getElementById("season").innerHTML = `<span class="red">季节:</span> ${season}
+                                <div class="pinyinSeasonContainer">
+                                    <span class="pinyin">${getPronunciationSeason(season)}</span>
+                                </div>`;
+        });
+
+        //from China
+        /*function getSeason(month) {
+            if (month >= 2 && month <= 4) {
+                return "春季"; //spring
+            } else if (month >= 5 && month <= 7) {
+                return "夏季"; //summer
+            } else if (month >= 8 && month <= 10) {
+                return "秋季"; //autumn
+            } else {
+                return "冬季"; //winter
+            }
+        }*/
+        //from Argentina
+        function getSeason(month) {
+            if ((month >= 1 && month <= 2) || month === 12) {
+                return "夏季"; //summer
+            } else if (month >= 3 && month <= 5) {
+                return "秋季"; //autumn
+            } else if (month >= 6 && month <= 8) {
+                return "冬季"; //winter
+            } else {
+                return "春季"; //spring
+            }
+        }
+
+
+
+        function convertToChineseNumber(number) {
+            const chineseNumbers = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+            const numStr = number.toString();
+            let result = "";
+            for (let i = 0; i < numStr.length; i++) {
+                if (numStr[i] === '1' && i < numStr.length - 1) {
+                    result += "十";
+                } else {
+                    result += chineseNumbers[parseInt(numStr[i])];
+                }
+            }
+            return result;
+        }
+
+        function getPronunciationHourMonth(number) {
+            const pronunciation = [
+                "líng", "yī", "èr", "sān", "sì", "wǔ", "liù", "qī", "bā", "jiǔ", "shí"
+            ];
+            const numStr = number.toString();
+            let result = "";
+            for (let i = 0; i < numStr.length; i++) {
+                result += pronunciation[parseInt(numStr[i])] + " ";
+            }
+            return result.trim();
+        }
+
+
+
+        function getPronunciationDay(number) {
+            const pronunciationDay = [
+                "xīng qī rì", "xīng qī yī", "xīng qī èr", "xīng qī sān", "xīng qī sì", "xīng qī wǔ", "xīng qī liù"
+            ];
+            return pronunciationDay[number];
+        }
+
+        function getPronunciationSeason(season) {
+            const pronunciationSeason = {
+                "春季": "chūn jì",
+                "夏季": "xià jì",
+                "秋季": "qiū jì",
+                "冬季": "dōng jì"
+            };
+            return pronunciationSeason[season];
+        }
+    </script>
+    <footer></footer>
+</body>
+
+</html>
