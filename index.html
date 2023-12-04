@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" http-equiv="Content-Type"
         content="text/html; charset=UTF-8, width=device-width, initial-scale=1.0" />
-    <title>Chinese now</title>
+    <title>C.NOW</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇭🇰</text></svg>" />
     <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
@@ -163,17 +163,16 @@
 
                         function getPronunciationDay(number) {
                             const pronunciationDay = [
-                                "xīng qī rì", "xīng qī yī", "xīng qī èr", "xīng qī sān", "xīng qī sì", "xīng qī wǔ", "xīng qī liù"
+                                /*"xīng qī rì", "xīng qī yī", "xīng qī èr", "xīng qī sān", "xīng qī sì", "xīng qī wǔ", "xīng qī liù"*/
+                                "xīng qī rì <i>(sunday)</i>", "xīng qī yī <i>(monday)</i>", "xīng qī èr <i>(tuesday)</i>", "xīng qī sān <i>(wednesday)</i>", "xīng qī sì <i>(thursday)</i>", "xīng qī wǔ <i>(friday)</i>", "xīng qī liù <i>(saturday)</i>"
                             ];
                             return pronunciationDay[number];
                         }
 
                         function getPronunciationSeason(season) {
                             const pronunciationSeason = {
-                                "春季": "chūn jì",
-                                "夏季": "xià jì",
-                                "秋季": "qiū jì",
-                                "冬季": "dōng jì"
+                                /*"春季": "chūn jì", "夏季": "xià jì", "秋季": "qiū jì", "冬季": "dōng jì"*/
+                                "春季": "chūn jì <i>(spring)</i>", "夏季": "xià jì <i>(summer)</i>", "秋季": "qiū jì <i>(autumn)</i>", "冬季": "dōng jì <i>(winter)</i>"
                             };
                             return pronunciationSeason[season];
                         }
