@@ -1,37 +1,37 @@
 {
-    "name": "C.NOW",
-    "short_name": "C.NOW",
+    "name": "C·NOW",
+    "short_name": "C·NOW",
     "start_url": "/chinese-now",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#ffffff",
     "icons": [
         {
-            "src": "/images/favicon-16x16.svg",
+            "src": "../images/favicon-16x16.svg",
             "sizes": "16x16"
         },
         {
-            "src": "/images/favicon-32x32.svg",
+            "src": "../images/favicon-32x32.svg",
             "sizes": "32x32"
         },
         {
-            "src": "/images/favicon-48x48.svg",
+            "src": "../images/favicon-48x48.svg",
             "sizes": "48x48"
         },
         {
-            "src": "/images/favicon-64x64.svg",
+            "src": "../images/favicon-64x64.svg",
             "sizes": "64x64"
         },
         {
-            "src": "/images/favicon-96x96.svg",
+            "src": "../images/favicon-96x96.svg",
             "sizes": "96x96"
         },
         {
-            "src": "/images/favicon-128x128.svg",
+            "src": "../images/favicon-128x128.svg",
             "sizes": "128x128"
         },
         {
-            "src": "/images/favicon-256x256.svg",
+            "src": "../images/favicon-256x256.svg",
             "sizes": "256x256"
         }
     ]
