@@ -33,6 +33,10 @@
         {
             "src": "../images/favicon-256x256.svg",
             "sizes": "256x256"
+        },
+        {
+            "src": "../images/favicon-512x512.svg",
+            "sizes": "512x512"
         }
     ]
 }
