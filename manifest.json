@@ -1,6 +1,7 @@
 {
     "name": "C·NOW",
     "short_name": "C·NOW",
+    "description": "",
     "start_url": "/chinese-now/",
     "display": "standalone",
     "orientation": "portrait",
