@@ -1,7 +1,7 @@
 {
     "name": "C·NOW",
     "short_name": "C·NOW",
-    "start_url": "/chinese-now",
+    "start_url": "/chinese-now/",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#ffffff",
