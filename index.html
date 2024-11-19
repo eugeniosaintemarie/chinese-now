@@ -68,7 +68,7 @@
         .then(config => {
           const baseURL = config.baseURL;
           const getRepoURL = (repoName) => `${baseURL}/${repoName}/`;
-          const repoName = getRepoURL("chinese-words");                       //repo-name
+          const repoName = getRepoURL("chinese-words");
           document.getElementById("access").href = repoName;
         })
         .catch(error => console.error("Error loading configuration:", error));
@@ -86,7 +86,6 @@
     </h2>
     <h2 id="season">
     </h2>
-    <!--<a id="access" style="text-decoration: none;" href="https://eugeniosaintemarie.github.io/chinese-words/">words</a>-->
     <a id="access" style="text-decoration: none;" href="#">Chinese Words</a>
 
     <script>
