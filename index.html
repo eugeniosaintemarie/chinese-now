@@ -10,12 +10,9 @@
     <link rel="manifest" href="./manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C·NOW</title>
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="./images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="./images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="./images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <style>
         body {
@@ -44,7 +41,7 @@
         }
 
         .pinyin {
-            color: #616161;
+            color: #212121;
             font-size: 0.75em;
         }
 
@@ -65,15 +62,15 @@
     </style>
     <script src="https://kit.fontawesome.com/12db9cd0d1.js" crossorigin="anonymous"></script>
     <script>
-      fetch("https://eugeniosaintemarie.github.io/config-central/url.json")
-        .then(response => response.json())
-        .then(config => {
-          const baseURL = config.baseURL;
-          const getRepoURL = (repoName) => `${baseURL}/${repoName}/`;
-          const repoName = getRepoURL("chinese-words");
-          document.getElementById("access").href = repoName;
-        })
-        .catch(error => console.error("Error loading configuration:", error));
+        fetch("https://eugeniosaintemarie.github.io/config-central/url.json")
+            .then(response => response.json())
+            .then(config => {
+                const baseURL = config.baseURL;
+                const getRepoURL = (repoName) => `${baseURL}/${repoName}/`;
+                const repoName = getRepoURL("chinese-words");
+                document.getElementById("access").href = repoName;
+            })
+            .catch(error => console.error("Error loading configuration:", error));
     </script>
 </head>
 
@@ -89,7 +86,7 @@
     <h2 id="season">
     </h2>
     <br>
-    <a id="access" style="color: #9E9E9E !important; text-decoration: none !important;" href="#">Chinese Words</a>
+    <a id="access" style="color: #424242 !important; text-decoration: none !important;" href="#">Chinese Words</a>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
