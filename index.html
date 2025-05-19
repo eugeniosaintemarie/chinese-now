@@ -49,6 +49,11 @@
         #access {
             margin-left: 15px;
             margin-right: 15px;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 50px;
+            z-index: 1000;
         }
     </style>
     <script src="https://kit.fontawesome.com/12db9cd0d1.js" crossorigin="anonymous"></script>
@@ -75,7 +80,7 @@
     <h2 id="season">
     </h2>
     <br>
-    <a id="access" style="color: #9E9E9E !important; text-decoration: none !important;" href="#">Chinese words</a>
+    <a id="access" style="color: #9E9E9E !important; text-decoration: none !important;" href="#">词</a>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const dayInChinese = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
